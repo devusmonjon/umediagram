@@ -2,12 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap');
 
 * {
-    @apply font-inter;
+    @apply font-primary;
 }
 
 .bg-gradient {
     background: linear-gradient(180deg, #877EFF 0%, #685DFF 46.15%, #3121FF 100%);
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    @apply dark:bg-dark-2 bg-light-2
+}
+
+::-webkit-scrollbar-thumb {
+    @apply dark:bg-primary
+}
+
+/* aside */
+.side-item a {
+    @apply p-[14px] rounded-lg w-full flex items-center gap-4 text-[16px] font-bold leading-[140%]
+}
+
+.side-item a svg path {
+    @apply fill-primary
+}
+
+.side-item * {
+    @apply transition-all ease-in duration-300
+}
+
+.side-item a:hover,
+.side-item a:focus {
+    @apply bg-primary
+}
+
+.side-item a:hover svg path,
+.side-item a:focus svg path {
+    @apply fill-light-1
+}
+
+.side-active a svg path {
+    @apply dark:fill-light-1 fill-dark-1;
+}
+
+.side-active {
+    @apply relative
+}
+
+.side-active a {
+    @apply bg-primary
+}
+
+.side-active .indicator {
+    display: inline-block;
 }

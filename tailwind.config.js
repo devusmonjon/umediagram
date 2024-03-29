@@ -26,7 +26,8 @@ module.exports = {
             },
         },
         fontFamily: {
-            inter: ["Inter", "sans-serif"],
+            primary: ["Inter", "sans-serif"],
+            "space-grotesk": ["Space Grotesk", "sans-serif"],
         },
         fontWeight: {
             bold: 700,

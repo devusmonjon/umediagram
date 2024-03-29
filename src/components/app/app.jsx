@@ -1,5 +1,12 @@
+import { Sidebar, Main } from "../";
+
 const App = () => {
-    return <h1 className="font-bold">Hello world</h1>;
+    return (
+        <>
+            <Sidebar />
+            <Main />
+        </>
+    );
 };
 
 export default App;
