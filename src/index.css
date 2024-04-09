@@ -24,6 +24,10 @@
     @apply dark:bg-primary
 }
 
+.stories::-webkit-scrollbar {
+    display: none;
+}
+
 /* aside */
 .side-item a {
     @apply p-[14px] rounded-lg w-full flex items-center gap-4 text-[16px] font-bold leading-[140%]
@@ -52,7 +56,11 @@
 }
 
 .side-active {
-    @apply relative
+    @apply relative text-light-1
+}
+
+.side-active a svg path {
+    @apply fill-light-1
 }
 
 .side-active a {
@@ -61,4 +69,42 @@
 
 .side-active .indicator {
     display: inline-block;
+}
+
+.fade-up {
+    -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation-delay: var(--i);
+}
+
+.scale-anim {
+    -webkit-animation: scale 0.1s linear both;
+    animation: scale 0.1s linear both;
+}
+
+/* animation */
+
+/* sclale */
+@keyframes scale {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+/* slide-top */
+
+@keyframes slide-top {
+    0% {
+        -webkit-transform: translateY(100px);
+        transform: translateY(100px);
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
 }
